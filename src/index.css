@@ -16,8 +16,26 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 1rem;
+  color: white;
+  background: rgb(147,145,198);
+background: linear-gradient(90deg, rgba(147,145,198,1) 0%, rgba(29,29,153,1) 49%, rgba(0,214,172,1) 100%);
 }
 
-
-
-
+.box {
+  background-color: rgb(151, 229, 255);
+  min-width: 20rem; /* Minimum width */
+  min-height: 10rem; /* Minimum height */
+  width: 20rem; /* Dynamic width based on content */
+  height: auto; /* Dynamic height based on content */
+  position: fixed;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking of content */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  padding: 1rem;
+  margin: 0.5rem;
+  border: solid black;
+}
