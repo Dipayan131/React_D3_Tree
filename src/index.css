@@ -21,6 +21,7 @@ h1 {
   color: white;
   background: rgb(147,145,198);
 background: linear-gradient(90deg, rgba(147,145,198,1) 0%, rgba(29,29,153,1) 49%, rgba(0,214,172,1) 100%);
+font-family: Arial, Helvetica, sans-serif;
 }
 
 .box {
@@ -38,4 +39,44 @@ background: linear-gradient(90deg, rgba(147,145,198,1) 0%, rgba(29,29,153,1) 49%
   padding: 1rem;
   margin: 0.5rem;
   border: solid black;
+}
+
+.search-bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0; /* Add a light background to make the button stand out */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  top: 0.35rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 10px; /* Add margin to the right of the input for spacing */
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF6347; /* Tomato color for better visibility */
+  color: #fff; /* White text color */
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #FF4500; /* OrangeRed color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
 }
