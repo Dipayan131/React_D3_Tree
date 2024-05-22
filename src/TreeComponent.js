@@ -56,8 +56,8 @@ const TreeComponent = ({ data, onItemClick }) => {
         <text fill="black" strokeWidth="1" x="20" y="5">
           {nodeDatum.name}
         </text>
-        
-          <foreignObject x="20" y="20" width="200" height="30">
+
+        <foreignObject x="20" y="20" width="200" height="30">
           {isLeaf && (
             <button
               onClick={() => handleClick(nodeDatum.name)}
@@ -80,29 +80,28 @@ const TreeComponent = ({ data, onItemClick }) => {
             >
               Details
             </button>
-            )}
-            <button
-              onClick={() => toggleFavorite(nodeDatum.name)}
-              style={{
-                padding: "8px 16px",
-                fontSize: "14px",
-                backgroundColor: isFavorite ? "red" : "green", // Red for favorite, Green for non-favorite
-                color: "#fff", // White text color
-                border: "1px solid #FF6347", // Tomato border
-                borderRadius: "25px", // Fully rounded corners
-                cursor: "pointer",
-                outline: "none",
-                verticalAlign: "middle",
-                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-                transition: "background-color 0.3s ease, box-shadow 0.3s ease",
-                height: "30px",
-                fontWeight: "bold",
-              }}
-            >
-              {isFavorite ? "Unfavorite" : "Favorite"}
-            </button>
-          </foreignObject>
-        
+          )}
+          <button
+            onClick={() => toggleFavorite(nodeDatum.name)}
+            style={{
+              padding: "8px 16px",
+              fontSize: "14px",
+              backgroundColor: isFavorite ? "red" : "green", // Red for favorite, Green for non-favorite
+              color: "#fff", // White text color
+              border: "1px solid #FF6347", // Tomato border
+              borderRadius: "25px", // Fully rounded corners
+              cursor: "pointer",
+              outline: "none",
+              verticalAlign: "middle",
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+              transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+              height: "30px",
+              fontWeight: "bold",
+            }}
+          >
+            {isFavorite ? "Unfavorite" : "Favorite"}
+          </button>
+        </foreignObject>
       </g>
     );
   };
@@ -119,14 +118,14 @@ const TreeComponent = ({ data, onItemClick }) => {
 
   return (
     <div>
-      <div ref={containerRef} style={{ width: "100%", height: "88vh" }}>
+      <div ref={containerRef} style={{ width: "100%", height: "80vh" }}>
         {treeData && (
           <Tree
             data={treeData}
             orientation="vertical"
             ref={treeRef}
             translate={translate}
-            zoom={0.85} // Adjust the zoom level as needed
+            zoom={0.8} // Adjust the zoom level as needed
             renderCustomNodeElement={renderCustomNode}
             enableLegacyTransitions
             shouldCollapseNeighborNodes
