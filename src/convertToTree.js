@@ -1,3 +1,4 @@
+//json file data converted to D3 react npm format
 export const convertToTree = (data) => {
     const processNode = (obj, name) => {
       const node = { name, children: [], details: null };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Tree } from "react-d3-tree";
 import { convertToTree } from "./convertToTree";
-import searchJSON from "./popSearch"; // Corrected import
+import searchJSON from "./popSearch";
 
 const TreeComponent = ({ data, onItemClick }) => {
   const [treeData, setTreeData] = useState(null);
@@ -10,11 +10,13 @@ const TreeComponent = ({ data, onItemClick }) => {
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
   const [favorites, setFavorites] = useState([]);
 
+  //sending the json file to convert
   useEffect(() => {
     const convertedData = convertToTree(data);
     setTreeData(convertedData);
   }, [data]);
 
+  //getting favourite node details from the local storage
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);
@@ -24,6 +26,7 @@ const TreeComponent = ({ data, onItemClick }) => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   };
 
+  //geting data to show the node details
   const handleClick = (item) => {
     const result = searchJSON(item);
     const message = {
@@ -34,6 +37,7 @@ const TreeComponent = ({ data, onItemClick }) => {
     onItemClick(message);
   };
 
+  //storing favourite node data in the local storage
   const toggleFavorite = (itemName) => {
     const updatedFavorites = favorites.includes(itemName)
       ? favorites.filter((name) => name !== itemName)
@@ -47,6 +51,7 @@ const TreeComponent = ({ data, onItemClick }) => {
     const isFavorite = favorites.includes(nodeDatum.name);
 
     return (
+      //customizing the circle and stroke
       <g>
         <circle
           r={15}
@@ -57,6 +62,7 @@ const TreeComponent = ({ data, onItemClick }) => {
           {nodeDatum.name}
         </text>
 
+        {/* details and favourite button with customization */}
         <foreignObject x="20" y="20" width="200" height="30">
           {isLeaf && (
             <button
@@ -106,6 +112,7 @@ const TreeComponent = ({ data, onItemClick }) => {
     );
   };
 
+  //to control the tree position
   useEffect(() => {
     if (containerRef.current) {
       const dimensions = containerRef.current.getBoundingClientRect();
@@ -129,7 +136,7 @@ const TreeComponent = ({ data, onItemClick }) => {
             renderCustomNodeElement={renderCustomNode}
             enableLegacyTransitions
             shouldCollapseNeighborNodes
-            separation={{ siblings: 1.6 }}
+            separation={{ siblings: 1.6 }} // Adjust the value to control the siblings seperation
           />
         )}
       </div>

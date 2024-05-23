@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -19,47 +19,54 @@ h1 {
   margin: 0;
   padding: 1rem;
   color: white;
-  background: rgb(147,145,198);
-background: linear-gradient(90deg, rgba(147,145,198,1) 0%, rgba(29,29,153,1) 49%, rgba(0,214,172,1) 100%);
-font-family: Arial, Helvetica, sans-serif;
+  background: rgb(147, 145, 198);
+  background: linear-gradient(
+    90deg,
+    rgba(147, 145, 198, 1) 0%,
+    rgba(29, 29, 153, 1) 49%,
+    rgba(0, 214, 172, 1) 100%
+  );
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* details box styling */
 .box {
   background-color: rgb(151, 229, 255);
-  min-width: 20rem; /* Minimum width */
-  min-height: 10rem; /* Minimum height */
-  width: 20rem; /* Dynamic width based on content */
-  height: auto; /* Dynamic height based on content */
+  min-width: 20rem;
+  min-height: 10rem;
+  width: 20rem;
+  height: auto;
   position: fixed;
   border-radius: 30px;
   display: flex;
-  flex-direction: column; /* Ensure vertical stacking of content */
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
   margin: 0.5rem;
   border: solid black;
 }
 
+/* node info box styling */
 .info {
-  width: 20rem; /* Set a fixed width */
-  max-height: 10rem; /* Limit the height to 10rem */
-  overflow-y: auto; /* Add vertical scroll if content exceeds max height */
+  width: 20rem;
+  max-height: 10rem;
+  overflow-y: auto;
   position: fixed;
-  border-radius: 10px; /* Smaller border radius */
+  border-radius: 10px;
   padding: 1rem;
   margin: 0.5rem;
   border: solid black;
   right: 0;
-  font-size: 14px; /* Increase font size for better readability */
+  font-size: 14px;
   backdrop-filter: blur(10px);
 }
 
 .info p {
-  margin: 0; /* Remove default margin for paragraphs */
+  margin: 0;
 }
 
-
+/* search bar styling */
 .search-bar {
   position: fixed;
   top: 20px;
@@ -67,7 +74,7 @@ font-family: Arial, Helvetica, sans-serif;
   width: 20rem;
   display: flex;
   align-items: center;
-  background-color: #f0f0f0; /* Add a light background to make the button stand out */
+  background-color: #f0f0f0;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -80,15 +87,15 @@ font-family: Arial, Helvetica, sans-serif;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-right: 10px; /* Add margin to the right of the input for spacing */
+  margin-right: 10px;
 }
 
 .search-bar button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #FF6347; /* Tomato color for better visibility */
-  color: #fff; /* White text color */
+  background-color: #ff6347;
+  color: #fff;
   cursor: pointer;
   outline: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -96,16 +103,17 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
 .search-bar button:hover {
-  background-color: #FF4500; /* OrangeRed color on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+  background-color: #ff4500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* info div styling */
 .osint-info {
   background-color: #e8eaea;
   padding: 20px;
   margin: 20px 0;
 }
-.osint-info h2{
+.osint-info h2 {
   display: flex;
   justify-content: center;
 }
@@ -114,6 +122,7 @@ font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
 }
 
+/* footer styling */
 .footer-content {
   display: flex;
   flex-direction: column;
@@ -140,10 +149,14 @@ ul li a:hover {
   color: #007bff;
 }
 
-
 footer {
-  background: rgb(147,145,198);
-background: linear-gradient(90deg, rgba(147,145,198,1) 0%, rgba(29,29,153,1) 49%, rgba(0,214,172,1) 100%);
+  background: rgb(147, 145, 198);
+  background: linear-gradient(
+    90deg,
+    rgba(147, 145, 198, 1) 0%,
+    rgba(29, 29, 153, 1) 49%,
+    rgba(0, 214, 172, 1) 100%
+  );
   color: #333;
   text-align: center;
   padding: 0px;

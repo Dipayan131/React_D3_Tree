@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TreeComponent from "./TreeComponent";
-import jsonData from "./_data/db.json"; // Ensure this path is correct
-import "./App.css"; // Import the CSS file
+import jsonData from "./_data/db.json";
+import "./App.css";
 import searchJSON from "./popSearch";
 import { FaTwitter, FaGithub } from "react-icons/fa";
 
@@ -9,10 +9,12 @@ const App = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
+  //function to set node details
   const handleItemClick = (item) => {
     setSelectedItem(item);
   };
 
+  //function to search for node details
   const handleSearch = () => {
     const foundItem = searchJSON(searchTerm);
     if (foundItem.length > 0) {
@@ -56,10 +58,16 @@ const App = () => {
         )}
       </div>
       <div className="info">
-        <p>(T) - Indicates a link to a tool that must be installed and run locally</p>
+        <p>
+          (T) - Indicates a link to a tool that must be installed and run
+          locally
+        </p>
         <p>(D) - Google Dork, for more information: Google Hacking</p>
         <p>(R) - Requires registration</p>
-        <p>(M) - Indicates a URL that contains the search term and the URL itself must be edited manually</p>
+        <p>
+          (M) - Indicates a URL that contains the search term and the URL itself
+          must be edited manually
+        </p>
       </div>
       <TreeComponent data={jsonData} onItemClick={handleItemClick} />
       <div className="search-bar">
